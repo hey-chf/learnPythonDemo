@@ -14,7 +14,7 @@ def get_user_input():
     return user_input
 
 
-def get_result(user_pick,computer_pick):
+def get_result(user_pick, computer_pick):
     if computer_pick == user_pick:
         return 'draw'
     elif user_pick == 'paper' and computer_pick == 'rock':
@@ -27,9 +27,12 @@ def get_result(user_pick,computer_pick):
         return 'lose'
 
 
+computer_pick = get_computers_choice()
+while True:
+    user_pick = get_user_input()
+    if user_pick in ['rock', 'papers', 'scissors']:
+        break
 
-computer_pick  = get_computers_choice()
-user_pick = get_user_input()
 result = get_result(user_pick, computer_pick)
 
 print(f"Computer`s pick: {computer_pick}")
